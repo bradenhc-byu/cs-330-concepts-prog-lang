@@ -1,0 +1,26 @@
+        Correct output:
+1.0
+true
+Pixel(10.0,10.0,10.0),Pixel(10.0,10.0,10.0),Pixel(10.0,10.0,10.0),Pixel(10.0,10.0,10.0),Pixel(10.0,10.0,10.0),Pixel(10.0,10.0,10.0),Pixel(10.0,10.0,10.0),Pixel(10.0,10.0,10.0),Pixel(10.0,10.0,10.0)
+Pixel(0,0,0),Pixel(0,0,0),Pixel(0,0,0),Pixel(0,0,0),Pixel(0,0,0),Pixel(0,0,0),Pixel(0,0,0),Pixel(0,0,0),Pixel(0,0,0)
+3
+4.0
+Person("Test",2012,:ink,Person("Test",2012,:fusia,Unknown(),Unknown()),Person("Test",2012,:brown,Unknown(),Unknown()))
+Person("TestName",2012,:ink,Person("BenName",2012,:fusia,Unknown(),Unknown()),Person("Kaitlyn Name",2012,:brown,Unknown(),Unknown()))
+Any[:ink,:fusia,:brown]
+
+        Your output:
+1.0
+true
+Pixel(10.0,10.0,10.0),Pixel(10.0,10.0,10.0),Pixel(10.0,10.0,10.0),Pixel(10.0,10.0,10.0),Pixel(10.0,10.0,10.0),Pixel(10.0,10.0,10.0),Pixel(10.0,10.0,10.0),Pixel(10.0,10.0,10.0),Pixel(10.0,10.0,10.0)
+Pixel(0,0,0),Pixel(0,0,0),Pixel(0,0,0),Pixel(0,0,0),Pixel(0,0,0),Pixel(0,0,0),Pixel(0,0,0),Pixel(0,0,0),Pixel(0,0,0)
+3
+4.0
+Person("Test",2012,:ink,Person("Test",2012,:fusia,Unknown(),Unknown()),Person("Test",2012,:brown,Unknown(),Unknown()))
+Person("TestName",2012,:ink,Person("BenName",2012,:fusia,Unknown(),Unknown()),Person("Kaitlyn Name",2012,:brown,Unknown(),Unknown()))
+Any[:ink,:fusia,:brown]
+
+        Failed tests:
+
+        Grade:
+9 out of 9

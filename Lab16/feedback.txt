@@ -1,0 +1,28 @@
+        Correct output:
+
+CITypes.BoolType()
+CITypes.NumType()
+CITypes.NumType()
+Error
+CITypes.NListType()
+CITypes.NumType()
+CITypes.FunType(CITypes.NumType(),CITypes.BoolType())
+Error
+CITypes.NListType()
+Error
+CITypes.NumType()
+CITypes.NListType()
+
+        Your output:
+CITypes.BoolType()
+CITypes.NumType()
+CITypes.NumType()
+Error
+CITypes.NListType()
+CITypes.NumType()
+CITypes.FunType(CITypes.NumType(),CITypes.BoolType())
+Error
+CITypes.NListType()
+Error
+CITypes.NumType()
+CITypes.NListType()

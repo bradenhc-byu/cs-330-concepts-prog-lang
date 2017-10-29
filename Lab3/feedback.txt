@@ -1,0 +1,29 @@
+        Correct output:
+#t
+#f
+#t
+#f
+'(0 10 100)
+321
+'((1 1) (2 2) (3 3))
+5/2
+'(1 2 3 4 5)
+7
+
+        Your output:
+#t
+#f
+#t
+#f
+'(0 10 100)
+321
+'((1 1) (2 2) (3 3))
+19/8
+'(1 2 3 4 5)
+7
+
+        Failed tests:
+8. 1 point. average general test.
+
+        Grade:
+8 out of 9

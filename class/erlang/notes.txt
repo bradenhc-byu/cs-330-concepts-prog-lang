@@ -1,0 +1,74 @@
++ Static typed vs. Dynamic type
+
+	+ Dynamic typed - types are tied to the value, not the variable. Can be changed
+			  at run-time
+
+	+ Static typed - types are tied to the variable, determined at compile time
+
+	+ Erlang is dynamic typed
+
++ Erlang is great, but the syntax is rough
+
++ Elixir
+	
+	+ Erlang is like Java in that it first creates byte code and then runs it on its own
+	  virtual machine
+
+	+ Elixir uses the Erlang VM, but it has a lot cleaner syntax
+
+	defmodule Recurse do
+
+		def fac(0) do 1 end
+		def fac(n) do
+			n*fac(n-1)
+		end
+
+	end
+
+	+ NOTE: Elixir cares about the arity of functions, so the real name of fac is fac/1 (1
+		tells us the arity)
+
+	+ Pattern matching - '_' , '[]' , '[x,y,z]' , '[x,y,z|tail]'
+
+	+ Tuples: {x,y}
+
+	+ can only assign to variables once (with "=")
+
+	+ "===" means check if equal to
+
+	+ Modules start with capital letters
+
+	+ List comprehensions
+
+		for n <- [x,y,z,...], (condition with n) do ... end
+
+
++ Concurrency Oriented Programming
+
+	+ processes are totally independent (imagine they run on different machines)
+
+	+ Process semantics = no sharing of data = copy-everything message passing
+
+		+ Sharing = inefficient (can't go parallel) + complicated (mutexes, locks)
+
+	+ Each process has an unforgeable name
+
+	+ If you know the name of a process you can send it a message
+
+	+ Message passing is "send and praye" (you send the message and pray it gets there)
+
+		+ Erlang/Elixir cannot gaurentee that the message will get there
+
+	+ You can monitor a remote response
+
+	+ COPL if...
+
+		+ process are truly independent
+
+		+ no penalty for massive parallelism
+
+		+ no unavoidable penalty for distribution
+
+		+ concurrent behavior of programssame on all OSs
+
+		+ can deal with failure

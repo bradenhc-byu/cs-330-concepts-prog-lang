@@ -1,0 +1,41 @@
+(+ 1 2)
+
+(+ 3 nempty)
+
+(- (+ 1 2) 3)
+
+(iszero 0 true false)
+
+(iszero nempty false false)
+
+(lambda x : number (+ x x))
+
+(with func (lambda x : number (+ x 21)) (+ 3 (func 4)))
+
+(with x 4 (+ x y))
+
+(nrest (ncons 3 (ncons 2 (ncons 1 nempty))))
+
+(nfirst (ncons 3 nempty))
+
+nempty
+
+1
+
+true
+
+(nisempty nempty)
+
+(nisempty (+ 1 2))
+
+(ifb true (+ 2 3) (ncons 1 nempty))
+
+(with x 4 (with y 3 (with func (lambda z : number (+ x (+ y z))) (func 2))))
+
+(with func (lambda x : number true) (func false))
+
+(with func1 (lambda x : number (+ x 2))
+  (with func2 (lambda f : (number : number) (f 3))
+    (func2 func1)))
+
+##end (this has to be here or the program won't finish the tests...)

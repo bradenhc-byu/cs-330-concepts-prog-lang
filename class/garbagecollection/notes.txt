@@ -1,0 +1,39 @@
+PRINCIPLES OF MEMORY MANAGEMENT -----------------------------------------------------------------
+
+Class Thoughts....
+1) Reclaim unused memory
+2) Don't reclaim used memory
+3) Know when memory is not used, including the future
+4) Fast  
+5) Low overhead
+	- Leave no holes
+	- Minimize extra storage
+6) Understand/check resource limitations
+7) Invisible
+
+Dr. Wingate's List....
+1) Soundness - never reclaim memory still in use
+2) Utility - collect as much garbage as possible
+3) Efficiency - run fast enough to not add much run-time overhead
+
+
+GARBAGE COLLECTORS ------------------------------------------------------------------------
+
++ Identify reclaimable space
++ Collect or reclaim (fast!)
+
++ Reachability
+	Start at the root set
+	If object o is reachable, then all objects that o references are also reachable
+	And so on, recursively
+
+  Solves the issue with cycles (using a reference counter doesn't work because in cycles, 
+  reference counters would never decrement)
+
+  Things become unreachable when they go out of scope
+
++ Simplest approach: no Garbage Collection (wait until end, used by eg, Apache web server)
++ Reference Counting
++ Marking: recursively trace from the root set and make live obejcts
++ Copying: copy everything and move to another part of the heap. Anything not live is not copied
+

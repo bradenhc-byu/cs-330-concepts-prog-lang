@@ -1,0 +1,7 @@
+#lang racket
+
+; takes a two parameter function and returns a curried version
+; of that function
+(define (curry2 func)
+  (lambda (x) (lambda (y) (func x y))))
+

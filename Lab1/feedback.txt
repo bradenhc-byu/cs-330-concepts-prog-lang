@@ -1,0 +1,10 @@
+        Diff output:
+41								41
+1.047								1.047
+1								1
+-0.305								-0.305
+
+        Failed tests:
+
+        Grade:
+4 out of 4

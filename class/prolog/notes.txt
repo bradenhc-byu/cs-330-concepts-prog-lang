@@ -1,0 +1,10 @@
+WATSON -------------------------------------------------------------------
+
++ When you are creating a company, you really have to break down the values and core
+  goals of your company in order to determine the best language platform to use.
+
++ Why did David Ferrucci use prolog to create Watson?
+
++ "Natural Language Processing With Prolog in the IBM Watson System" (Article)
+
++ 

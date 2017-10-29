@@ -1,0 +1,95 @@
+DEFINING AND INTERPRETING A GRAMMAR-------------------------------------------------------------
+
++ Using Variables
+	
+	(with x (+ 42 1)
+		
+		(if 0 (with x 16
+			(+ x 12))
+			x (- x 1))
+
+	+ Shadowing - redefining a variable with the same name inside the scope of the previous
+		      variable (in racket, using (with ... ) see above
+
+	+ Implement shadowing using a stack-like structure
+
+
++ Building the grammar
+
+	OWL :: =	(+ <OWL> <OWL>)
+			(- <OWL> <OWL>)
+			number
+			(if0 <OWL> <OWL> <OWL>)
+			(with <SYM> <OWL> <OWL>) #first OWL is binding expression, next is body
+			
+				+ The <SYM> is a reference node (or a symbol node) that applies
+				  to the abstract syntax tree
+
+				+ Need to have an "environment" that stores the mapping
+				  between symbols and their values
+				  Can do this in different ways, i.e. Simple Linked List
+
+
+
+
+
+
+INTERPRETERS: MUTATIONS AND STATEMENTS ----------------------------------------------------------
+
++ Church-Rossler Theorem: It doesn't matter what order we evaluate expression in a purely
+  functional language, as long as there are no side effects and expressions do not spin off into
+  infinite loops
+
++ Want to sequence expressions? Have to add mutation
+
+OWL ::=	(seq <OWL>*)
+	(box <OWL>)
+	(openbox <OWL>)
+	(set! <OWL> <OWL>)	# LISP notation - anytime we set something, use '!' 
+				  to indicate mutation
+
+
++ Example program
+
+(with a (box 42)
+	(with f  (lambda x (+ x (openbox a)))
+		(seqn
+			(set! a 16)
+			(f 5)
+		)
+	)
+)
+
+
+#=
+= 
+= Ought to return 21
+= Now that we have mutation, it clearly matters which order we evaluate expressions
+= What do we mean by seqn? We will run the sub expressions in the order in which
+= they appear. No more parallelization
+=
+= The environment is not pointing to the 42...it is pointing to the box! The only thing that
+= changes is the contents of the box
+=
+= The environment is still the guardian of static scope...we have not changed any rules there.
+=
+= But if we let the environment change, we can sometimes violate static scope
+=
+=#
+
+
+
+
+
+
+(+ (foo) (bar))
+
+#=
+=
+= What if we need to evaluate the expression from left to right?
+=
+= We need to create a store
+=
+= Now whenever we return from a function, we need to give the value and the possibly modified
+= store (need to update our RetVal type)
+=#
